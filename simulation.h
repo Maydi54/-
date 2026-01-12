@@ -13,6 +13,8 @@ struct SimulationStep {
 void menu();
 int Input();
 double InputDouble();
+double InputAnyDouble();
+double InputPositiveDouble();
 void printTable(const std::vector<SimulationStep>& results);
 void saveToFile(const std::vector<SimulationStep>& results);
 void InputConstant(int number);
