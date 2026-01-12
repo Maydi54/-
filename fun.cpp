@@ -31,10 +31,10 @@ double InputPositiveDouble() {
     using namespace std;
     while (true) {
         double value = InputAnyDouble();
-        if (value > 0) {
+        if (value >= 0) {
             return value;
         } else {
-            cout << "Ошибка! Это значение должно быть строго больше 0." << endl;
+            cout << "Ошибка! Это значение должно быть больше либо равно 0." << endl;
         }
     }
 }
@@ -138,7 +138,7 @@ void InputConstant(int number) {
             cout << "Введите массу груза m (кг): ";
             double m = InputDouble();
             cout << "Введите начальное смещение x (м): ";
-            double x = InputDouble();
+            double x = InputAnyDouble();
             cout << "Введите шаг времени dt (сек, рекомендую 0.01): ";
             double dt = InputDouble();
             cout << "Введите общее время (сек): ";
@@ -166,9 +166,9 @@ void InputConstant(int number) {
             cout << "Введите начальную позицию (м): ";
             double x = InputPositiveDouble();
             cout << "Введите начальную скорость (м/с): ";
-            double v = InputDouble();
+            double v = InputAnyDouble();
             cout << "Введите ускорение (м/с^2): ";
-            double a = InputDouble();
+            double a = InputAnyDouble();
             cout << "Введите шаг времени (сек): ";
             double dt = InputDouble();
             cout << "Введите общее время симуляции (сек): ";
@@ -195,7 +195,7 @@ void InputConstant(int number) {
             cout << "Введите массу частицы m (кг): ";
             double m = InputDouble();
             cout << "Введите напряженность поля E (В/м): ";
-            double E = InputDouble();
+            double E = InputAnyDouble();
             cout << "Введите начальную позицию (м): ";
             double x = InputPositiveDouble();
             cout << "Введите шаг времени dt (сек): ";
