@@ -16,6 +16,29 @@ int Input() {
     return value;
 }
 
+double InputAnyDouble() {
+    using namespace std;
+    double value;
+    while (!(cin >> value)) {
+        cout << "Ошибка! Введите корректное число: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    return value;
+}
+
+double InputPositiveDouble() {
+    using namespace std;
+    while (true) {
+        double value = InputAnyDouble();
+        if (value > 0) {
+            return value;
+        } else {
+            cout << "Ошибка! Это значение должно быть строго больше 0." << endl;
+        }
+    }
+}
+
 double InputDouble() {
     using namespace std;
         double value;
@@ -141,7 +164,7 @@ void InputConstant(int number) {
         }
         case(3):{
             cout << "Введите начальную позицию (м): ";
-            double x = InputDouble();
+            double x = InputPositiveDouble();
             cout << "Введите начальную скорость (м/с): ";
             double v = InputDouble();
             cout << "Введите ускорение (м/с^2): ";
@@ -168,13 +191,13 @@ void InputConstant(int number) {
         }
         case(4):{
             cout << "Введите величину заряда q (Кулон): ";
-            double q = InputDouble();
+            double q = InputAnyDouble();
             cout << "Введите массу частицы m (кг): ";
             double m = InputDouble();
             cout << "Введите напряженность поля E (В/м): ";
             double E = InputDouble();
             cout << "Введите начальную позицию (м): ";
-            double x = InputDouble();
+            double x = InputPositiveDouble();
             cout << "Введите шаг времени dt (сек): ";
             double dt = InputDouble();
             cout << "Введите общее время (сек): ";
